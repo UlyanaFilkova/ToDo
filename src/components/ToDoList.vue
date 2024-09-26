@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import ToDoGroup from './ToDoGroup.vue'
-import { ToDoStatus } from '@/types.ts'
+import { ToDoStatus } from '@/types'
 </script>
 
 <template>

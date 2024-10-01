@@ -62,6 +62,7 @@ a,
   cursor: grab;
   margin-bottom: 10px;
   border-radius: 5px;
+  min-height: 15px;
 }
 
 .group-wrapper li:last-child {
@@ -78,4 +79,9 @@ a,
 
 .draggable {
   min-height: 200px;
+}
+
+.delete-icon{
+  float: right;
+  cursor: pointer;
 }

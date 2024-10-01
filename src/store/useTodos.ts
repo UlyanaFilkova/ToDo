@@ -32,5 +32,11 @@ export default () => {
   const getTodosByStatus = (todoStatus: ToDoStatus) => {
     return computed(() => todoStore[todoStatus])
   }
-  return { getTodosByStatus }
+  const addNewTodo = (todo: ToDo) => {
+    todoStore[todo.status].push(todo);
+  }
+  const deleteTodo = (todo: ToDo) => {
+    todoStore[todo.status] = todoStore[todo.status].filter((item) => item.id !== todo.id);
+  }
+  return { getTodosByStatus, addNewTodo, deleteTodo }
 }

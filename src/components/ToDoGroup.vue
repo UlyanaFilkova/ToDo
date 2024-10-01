@@ -17,14 +17,26 @@ const groupLabel = {
   [ToDoStatus.Completed]: 'Completed'
 }
 
-const { getTodosByStatus, deleteTodo } = useTodos()
+const { getTodosByStatus, deleteTodo, updateTodoStatus } = useTodos()
 const todoList = getTodosByStatus(props.status)
+
+const onDraggableChange = (payload: any) => {
+  if (payload?.added?.element) {
+    updateTodoStatus(payload?.added?.element, props.status)
+  }
+}
 </script>
 
 <template>
   <div class="group-wrapper">
     <h3>{{ groupLabel[props.status] }}</h3>
-    <Draggable class="draggable" :list="todoList" group="todos" itemKey="id">
+    <Draggable
+      class="draggable"
+      :list="todoList"
+      group="todos"
+      itemKey="id"
+      @change="onDraggableChange"
+    >
       <template #item="{ element: todo }">
         <li>
           {{ todo.title }}

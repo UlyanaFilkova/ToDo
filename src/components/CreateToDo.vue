@@ -39,13 +39,26 @@ const handleOnSubmit = () => {
 
 <template>
   <div>
-    <button v-if="!shouldDisplayForm" @click="shouldDisplayForm = !shouldDisplayForm">
+    <button class="add-button" v-if="!shouldDisplayForm" @click="shouldDisplayForm = !shouldDisplayForm">
       Add New ToDo
     </button>
     <form v-else @submit.prevent="handleOnSubmit">
-      <input v-model="newToDo.title" type="text" name="" id="" placeholder="Title" />
-      <textarea v-model="newToDo.description" name="" id="" placeholder="description"></textarea>
-      <div>
+      <input
+        class="form-title"
+        v-model="newToDo.title"
+        type="text"
+        name=""
+        id=""
+        placeholder="Title"
+      />
+      <textarea
+        class="form-description"
+        v-model="newToDo.description"
+        name=""
+        id=""
+        placeholder="Description"
+      ></textarea>
+      <div class="buttons">
         <button type="submit">Submit</button>
         <button type="button" @click="resetForm">Reset</button>
       </div>

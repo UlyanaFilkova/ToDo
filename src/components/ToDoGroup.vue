@@ -39,7 +39,7 @@ const onDraggableChange = (payload: any) => {
     >
       <template #item="{ element: todo }">
         <li>
-          {{ todo.title }}
+          <span class="todoTitle">{{ todo.title }}</span>
           <span class="delete-icon" @click="deleteTodo(todo)">x</span>
           <p class="todoDescription">{{ todo.description }}</p>
         </li>

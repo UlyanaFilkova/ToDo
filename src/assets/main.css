@@ -39,6 +39,9 @@ a,
   background-color: #ffc4da;
   padding: 15px;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .group-wrapper h3 {
@@ -49,8 +52,10 @@ a,
   margin-bottom: 15px;
 }
 
-.group-wrapper ul {
-  padding: 0;
+.draggable {
+  min-height: 200px;
+  flex-grow: 1;
+  width: 100%;
 }
 
 .group-wrapper li {
@@ -63,6 +68,7 @@ a,
   margin-bottom: 10px;
   border-radius: 5px;
   min-height: 15px;
+  width: 100%;
 }
 
 .group-wrapper li:last-child {
@@ -77,11 +83,63 @@ a,
   font-size: 12px;
 }
 
-.draggable {
-  min-height: 200px;
-}
-
-.delete-icon{
+.delete-icon {
   float: right;
   cursor: pointer;
+}
+
+.form-title,
+.form-description {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  font-size: 14px;
+  margin-bottom: 10px;
+  padding: 5px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+
+.form-title::placeholder,
+.form-description::placeholder {
+  letter-spacing: 0.3px;
+}
+
+.form-title:focus,
+.form-description:focus {
+  border: 1px solid #6f2c46;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  padding: 4px 10px;
+  color: #6f2c46;
+  border: 1px solid #6f2c46;
+  background-color: #ec96b6;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+}
+
+button:hover {
+  background-color: #df789e;
+  color: #4b1428;
+  cursor: pointer;
+}
+
+.add-button {
+  align-self: center;
+}
+
+.delete-icon {
+  font-size: 18px;
+  color: #6f2c46;
+  font-weight: 600;
+}
+
+.delete-icon:hover {
+  color: #3c0d1e;
 }

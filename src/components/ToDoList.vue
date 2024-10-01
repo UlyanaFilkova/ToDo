@@ -3,8 +3,11 @@ import ToDoGroup from './ToDoGroup.vue'
 import { ToDoStatus } from '@/types'
 </script>
 
-<template>
-  <ToDoGroup :status="ToDoStatus.Pending" />
-  <ToDoGroup :status="ToDoStatus.InProgress" />
-  <ToDoGroup :status="ToDoStatus.Completed" />
+<template >
+  <div class="groups-wrapper">
+    <ToDoGroup :status="ToDoStatus.Pending" />
+    <ToDoGroup :status="ToDoStatus.InProgress" />
+    <ToDoGroup :status="ToDoStatus.Completed" />
+  </div>
 </template>
+

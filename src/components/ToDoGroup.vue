@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { ToDoStatus, type ToDo } from '@/types'
 import useTodos from '@/store/useTodos'
+import Draggable from 'vuedraggable'
 
 interface Props {
   status: ToDoStatus
@@ -20,10 +21,17 @@ const todoList = getTodosByStatus(props.status)
 </script>
 
 <template>
-  <div>
+  <div class="group-wrapper">
     <h3>{{ groupLabel[props.status] }}</h3>
-    <ul>
-      <li v-for="todo in todoList" :key="todo.id">{{ todo.title }}</li>
-    </ul>
+    <Draggable class="draggable" :list="todoList" group="todos" itemKey="id">
+      <template #item="{element: todo}">
+        
+        <li>
+          {{ todo.title }}
+          <p class="todoDescription">{{ todo.description }}</p>
+        </li>
+      </template>
+    </Draggable>
+    
   </div>
 </template>

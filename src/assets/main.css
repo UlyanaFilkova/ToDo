@@ -21,15 +21,61 @@ a,
   }
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
+.groups-wrapper {
+  width: 70%;
+  margin: 50px auto 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 5vw;
+}
+@media (max-width: 1100px) {
+  .groups-wrapper {
+    width: 90%;
   }
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+.group-wrapper {
+  flex: 1;
+  background-color: #ffc4da;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.group-wrapper h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #6f2c46;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.group-wrapper ul {
+  padding: 0;
+}
+
+.group-wrapper li {
+  list-style: none;
+  background-color: #f7abc7;
+  padding: 10px;
+  color: #400a1f;
+  font-size: 16px;
+  cursor: grab;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.group-wrapper li:last-child {
+  margin-bottom: 0;
+}
+
+.group-wrapper li:hover {
+  background-color: #f595b8;
+}
+
+.todoDescription {
+  font-size: 12px;
+}
+
+.draggable {
+  min-height: 200px;
 }

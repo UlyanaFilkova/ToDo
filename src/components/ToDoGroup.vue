@@ -3,7 +3,7 @@ import { computed } from 'vue'
 import { ToDoStatus, type ToDo } from '@/types'
 import useTodos from '@/store/useTodos'
 import Draggable from 'vuedraggable'
-import CreateTodo from './CreateTodo.vue'
+import CreateTodo from 'CreateTodo.vue'
 
 interface Props {
   status: ToDoStatus
